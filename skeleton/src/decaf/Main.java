@@ -28,9 +28,25 @@ class Main {
 		
 		        			switch (token.getType())
 		        			{
-		        			case DecafScannerTokenTypes.ID:
+
+							case DecafScannerTokenTypes.CHAR:
+								type = " CHARLITERAL";
+								break;
+							case DecafScannerTokenTypes.ID:
 		        				type = " IDENTIFIER";
 		        				break;
+							case DecafScannerTokenTypes.TK_true:
+								type = " BOOLEANLITERAL";
+								break;
+							case DecafScannerTokenTypes.TK_false:
+								type = " BOOLEANLITERAL";
+								break;
+							case DecafScannerTokenTypes.INT_LIT:
+								type = " INTLITERAL";
+								break;
+							case DecafScannerTokenTypes.STRING:
+								type = " STRINGLITERAL";
+								break;
 		        			}
 		        			System.out.println (token.getLine() + type + " " + text);
 		        		}
