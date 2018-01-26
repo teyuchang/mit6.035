@@ -62,7 +62,11 @@ class Main {
         	{
         		DecafScanner lexer = new DecafScanner(new DataInputStream(inputStream));
         		DecafParser parser = new DecafParser (lexer);
-                parser.program();
+				parser.setTrace(CLI.debug);
+				parser.program();
+				if(parser.getError())
+					System.exit(-1);
+
         	}
         	
         } catch(Exception e) {
